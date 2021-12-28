@@ -1,0 +1,21 @@
+<ng-container class=".example-container">
+  <mat-toolbar class="example-header">
+    <span>Admin username: {{ user?.userName }}</span>
+    <span class="example-spacer"></span>
+    <span>
+      <a class="nav-link" [routerLink]="['login']" (click)="logOut()" routerLinkActive="active">Log out</a>
+    </span>
+  </mat-toolbar>
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/admin/profile">Profile</a>
+          <a mat-list-item routerLink="/admin/users/list">Users</a>
+          <a mat-list-item routerLink="/admin/articles/list">Articles</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content [formGroup]="options">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>

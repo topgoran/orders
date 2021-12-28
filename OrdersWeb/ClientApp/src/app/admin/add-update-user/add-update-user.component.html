@@ -1,0 +1,56 @@
+<mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <div class="center-div">
+          <h1 *ngIf="isAddMode">Add new user</h1>
+          <h1 *ngIf="!isAddMode">Edit user</h1>
+        </div>
+
+        <form #f="ngForm"  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+          <fieldset [disabled]="!isAddMode ? 'disabled' : null">
+
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Username</label>
+              <input formControlName="userName" type="text" class="form-control" id="registerUsername" placeholder="Enter username" name="username" ngModel required>
+            </div>
+            <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email</label>
+                <input formControlName="email" type="text" class="form-control" id="registerEmail" placeholder="Enter email" name="email" ngModel required>
+              </div>
+            <div *ngIf="isAddMode" class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="registerPassword" placeholder="Enter password. Must contain at least one upper and lower case letter, a number and a symbol" name="password" ngModel required>
+            </div>
+        
+        </fieldset>
+
+            
+            <div class="mb-3">
+                <label for="registerFirstName" class="form-label">First name</label>
+                <input formControlName="firstName" type="text" class="form-control" id="registerFirstName" placeholder="Enter first name" name="firstname" ngModel required>
+              </div>
+              <div class="mb-3">
+                <label for="registerLastName" class="form-label">Last name</label>
+                <input formControlName="lastName" type="text" class="form-control" id="registerLastName" placeholder="Enter last name" name="lastname" ngModel required>
+              </div>
+              <div class="mb-3">
+                <label for="registerAddress" class="form-label">Address</label>
+                <input formControlName="address" type="text" class="form-control" id="registerAddress" placeholder="Enter address" name="address" ngModel required>
+              </div>
+              <div class="mb-3">
+                <label for="registerState" class="form-label">State</label>
+                <input formControlName="state" type="text" class="form-control" id="registerState" placeholder="Enter state" name="state" ngModel required>
+              </div>
+              <div class="mb-3">
+                <label for="registerCity" class="form-label">City</label>
+                <input formControlName="city" type="text" class="form-control" id="registerCity" placeholder="Enter city" name="city" ngModel required>
+              </div>
+              <div class="center-button">
+                <button *ngIf="isAddMode" type="submit" [disabled]="f.invalid" class="btn btn-primary" (onClick)="onSubmit">Add user</button>
+                <button *ngIf="!isAddMode" type="submit" [disabled]="f.invalid" class="btn btn-primary" (onClick)="onSubmit">Edit user</button>
+              </div>
+          </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+      <div class="center-div">
+        <h1>Register</h1>
+      </div>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="registerUsername" placeholder="Enter username" name="username" ngModel required #username="ngModel">
+            </div>
+            <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email</label>
+                <input type="text" class="form-control" id="registerEmail" placeholder="Enter email" name="email" ngModel required #email="ngModel">
+              </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="registerPassword" placeholder="Enter password. Must contain at least one upper and lower case letter, a number and a symbol" name="password" ngModel required #password="ngModel">
+            </div>
+            <div class="mb-3">
+                <label for="registerFirstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="registerFirstName" placeholder="Enter first name" name="firstname" ngModel required #firstname="ngModel">
+              </div>
+              <div class="mb-3">
+                <label for="registerLastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="registerLastName" placeholder="Enter last name" name="lastname" ngModel required #lastname="ngModel">
+              </div>
+              <div class="mb-3">
+                <label for="registerAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="registerAddress" placeholder="Enter address" name="address" ngModel required #address="ngModel">
+              </div>
+              <div class="mb-3">
+                <label for="registerState" class="form-label">State</label>
+                <input type="text" class="form-control" id="registerState" placeholder="Enter state" name="state" ngModel required #state="ngModel">
+              </div>
+              <div class="mb-3">
+                <label for="registerCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="registerCity" placeholder="Enter city" name="city" ngModel required #city="ngModel">
+              </div>
+              <div class="center-button">
+                <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Register</button>
+              </div>
+          </form>
+    </div>
+</div>

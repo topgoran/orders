@@ -1,0 +1,35 @@
+.center-horizontal {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.center-vertical {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.center-div {
+    text-align:center
+}
+
+.center-button{
+  text-align:center;
+  margin: 10px;
+
+}
+
+mat-progress-spinner{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+

@@ -1,0 +1,55 @@
+ng-sidebar-container{
+    height: 100vh;
+}
+
+
+::ng-deep .ng-sidebar{
+    background-color: #f4f4f4;
+    width: 300px;
+    padding: 2em 3em;
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+}
+
+.menu {
+    margin-top: 2em;
+    display: block;
+}
+
+.menu li{
+    margin-bottom: 15px;
+}
+
+.menu li a{
+    display: block;
+    width: 100%;
+}
+
+.example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    width: 300px;
+    padding: 2em 3em;
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+  }
+
+  .example-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  

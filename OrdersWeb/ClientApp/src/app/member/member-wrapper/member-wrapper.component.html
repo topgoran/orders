@@ -1,0 +1,13 @@
+<ng-container class=".example-container">
+    <mat-toolbar class="example-header">
+      <span>Member username: {{ user?.firstName }}</span>
+      <span class="example-spacer"></span>
+      <span>
+        <a class="nav-link" routerLinkActive="active" (click)="logOut()" [routerLink]="['login']">Log out</a>
+      </span>
+    </mat-toolbar>
+
+    <div class="profile">
+      <router-outlet></router-outlet>
+    </div>
+</ng-container>

@@ -1,0 +1,25 @@
+<mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+
+<div>
+    <div class="col-md-6 offset-md-3 mt-4">
+      <div class="center-div">
+        <h1>Login</h1>
+      </div>
+        <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="mb-3">
+              <label for="loginUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="loginUsername" placeholder="Enter username" name="username" ngModel required #username="ngModel">
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="password" ngModel required #password="ngModel">
+            </div>
+            <div class="center-button">
+              <button class="center-button" type="submit" [disabled]="f.invalid" class="btn btn-primary">Login</button>
+            </div>
+            <div class="center-div">
+              <a routerLink="/register" routerLinkActive="active">Don't have an account? Register here.</a>
+            </div>
+          </form>
+    </div>
+</div>

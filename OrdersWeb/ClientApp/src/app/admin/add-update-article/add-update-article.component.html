@@ -1,0 +1,37 @@
+<mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <div class="center-div">
+          <h1 *ngIf="isAddMode">Add new article</h1>
+          <h1 *ngIf="!isAddMode">Edit article</h1>
+        </div>
+
+        <form #f="ngForm"  [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter name" name="name" ngModel required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input formControlName="description" type="text" class="form-control" id="description" placeholder="Enter description" name="description" ngModel required>
+              </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input (keypress)="(($event.charCode >= 48 && $event.charCode &lt; 58 ) || $event.charCode == 46)" formControlName="price" type="decimal" class="form-control" id="price" placeholder="Enter price" name="price" ngModel required>
+            </div>
+            <div class="mb-3">
+                <label for="imageId" class="form-label">Image id</label>
+                <input (keypress)="($event.charCode >= 48 && $event.charCode &lt; 58)" formControlName="imageId" type="text" class="form-control" id="imageId" placeholder="Enter image id" name="imageId" ngModel required>
+              </div>
+            <div class="mb-3">
+              <label for="coverId" class="form-label">Cover image id</label>
+              <input (keypress)="($event.charCode >= 48 && $event.charCode &lt; 58)" formControlName="coverId" type="text" class="form-control" id="coverId" placeholder="Enter cover image id" name="coverId" ngModel required>
+            </div>
+            <div class="center-button">
+                <button *ngIf="isAddMode" type="submit" [disabled]="f.invalid" class="btn btn-primary" (onClick)="onSubmit">Add article</button>
+                <button *ngIf="!isAddMode" type="submit" [disabled]="f.invalid" class="btn btn-primary" (onClick)="onSubmit">Edit article</button>
+              </div>
+          </form>
+    </div>
+</div>

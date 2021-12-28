@@ -1,0 +1,79 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  .crud-div {
+    float: right;
+    margin: 0 auto;
+  }
+  .block {
+    width: 150px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .search-field-right {
+    max-width: 500px;
+    min-width: 400px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin:auto;
+    float:right;
+  }
+
+  .select-menu-left {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin:auto;
+    float:left;
+  }
+
+  mat-progress-spinner{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+img{
+  height: 100px;
+  width: 100px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.mat-column-name{
+  width: 400px;
+}
+
+.mat-column-description{
+  width: 800px;
+}
+
+.mat-column-price{
+  width: 100px;
+}
+
+.mat-column-image{
+  width: 150px;
+}
+
+mat-header-cell, mat-cell {
+  justify-content: center;
+}
